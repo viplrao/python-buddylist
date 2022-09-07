@@ -1,0 +1,26 @@
+body {
+    background-color: #010001;
+    color: #FEFFFE;
+    font-family: "Helvetica Neue"
+}
+
+nav {
+    font-family: "Roboto Mono";
+}
+
+.navbar-brand {
+    color: #FEFFFE;
+    padding: 25px;
+}
+
+.nav-link {
+    color: #FEFFFE;
+}
+
+.impact {
+    text-align: center;
+}
+
+.song-info {
+    list-style: none;
+}

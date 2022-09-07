@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+{% block title %} Friend Activity {% endblock %}
+
+{% block content %}
+{% for friend in activity %}
+<div class="friend-info">
+    <h1> {{ friend["user"]["name"] }}</h1>
+    <img src={{ friend["user"]["imgUrl"] }} />
+</div>
+<ul>
+    <li class="song-info"> {{ friend["track"]["name"] }} </li>
+    <li class="song-info"> {{ friend["track"]["artist"]["name"] }} </li>
+</ul>
+
+{% endfor %}
+{% endblock %}
