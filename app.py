@@ -22,7 +22,7 @@ def friends():
 
 @app.route("/me")
 def personal_stats():
-    return render_template("me.html", me=spotipy.me())
+    return render_template("me.html")
 
 
 @app.route("/raw")
