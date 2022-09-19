@@ -1,3 +1,4 @@
+from unicodedata import name
 from spotipy.oauth2 import SpotifyOAuth
 import spotipy
 import buddy
@@ -17,7 +18,7 @@ def index():
 
 @app.route("/friends")
 def friends():
-    return render_template("friends.html", activity=update_activity())
+    return render_template("friends.html", activity=get_activity())
 
 
 @app.route("/me")
@@ -27,8 +28,26 @@ def personal_stats():
 
 @app.route("/raw")
 def raw():
-    return render_template("raw.html", activity=update_activity())
+    return get_activity()
 
 
-def update_activity():
+def get_activity():
     return buddy.get_friend_activity(access_token)["friends"]
+
+
+def get_current_song_all() -> list:
+    songs = []
+    activity = get_activity()
+    for user in activity:
+        name = user["user"]["name"]
+
+
+class Result:
+    def __init__(self, uri, name) -> None:
+        self.uri = uri
+        self.name = name
+
+
+class User(Result):
+    def __init__(self, uri, name) -> None:
+        super().__init__(uri, name)
