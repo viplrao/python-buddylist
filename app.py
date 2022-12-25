@@ -4,7 +4,7 @@ import spotipy
 import buddy
 from flask import Flask, url_for, render_template
 
-spdc_cookie = "AQCzVVSFgZT2cLk_bKkoXc4-w9qU60KJN2WkKkRfxg5MmV3EBPGwwQ26B7DkoTFkAWZC3hcYvV3U5M99gE41gvGxR9IKnmbYsGktySFe2ErHtHUhUwQQJ0pwvseDHN-O7SfSpn2bcn3FVr8ihg5nja964UgRQ3Bs"
+spdc_cookie = "REDACTED"
 access_token = buddy.get_web_access_token(spdc_cookie)
 app = Flask(__name__)
 scope = "user-library-read"
